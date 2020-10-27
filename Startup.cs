@@ -58,9 +58,11 @@ namespace InTheBag
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(name: "default",pattern: "{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                name: "genie2",
+                pattern: "{controller=Genie}/{action=Create2}/{GenieName?}/{Age?}/{WishesGranted?}");
             });
         }
     }
